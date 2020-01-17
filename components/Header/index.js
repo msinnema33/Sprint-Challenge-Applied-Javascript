@@ -11,9 +11,9 @@
 
 function Header() {
     const head = document.createElement('div');
-    date = document.createElement('span');
-    title = document.createElement('h1');
-    temp = document.createElement('span');
+    const date = document.createElement('span');
+    const title = document.createElement('h1');
+    const temp = document.createElement('span');
 
     head.appendChild(date);
     head.appendChild(title);
@@ -30,6 +30,6 @@ function Header() {
     return head;
 }
 
-const header = document.querySelector('.header-container');
+const headContent = document.querySelector('.header-container');
 
-header.appendChild(Header);
+headContent.appendChild(Header());

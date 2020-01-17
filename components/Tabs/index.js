@@ -7,3 +7,12 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then(e => {
+        console.log('data: ', e);
+    })
+    // .catch(error => {
+    //     console.log("Couldn't get the data", error);
+    // });
