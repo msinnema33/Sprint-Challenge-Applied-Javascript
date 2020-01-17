@@ -9,29 +9,19 @@
 //    <div class="tab">topic here</div>
 
 
-// axios.get('https://lambda-times-backend.herokuapp.com/topics')
-//     .then(e => {
-//         console.log('data: ', e);
-//     });
-// .catch(error => {
-//     console.log("Couldn't get the data", error);
-// });
-
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
-    .then(data => {
-        console.log('data: ', data);
+    .then(response => {
+        //console.log('topics: ', response);
         //const myInfo = e.data;
         //console.log('User info: ', myInfo);
-
+        response.data.topics.forEach(item => {
+            const tab = Tab(item);
+            tabContent.appendChild(tab);
+        });
         //const cards = document.querySelector('.cards');
-        const tabContent = document.querySelector('.topics');
-        const tab = Tab(data);
-        tabContent.appendChild(tab);
+        //const tabContent = document.querySelector('.topics');
+
     })
-
-
-
-
 
 function Tab(data) {
     const newTab = document.createElement('div');
@@ -40,11 +30,9 @@ function Tab(data) {
 
     newTab.textContent = data.topics;
 
-
-
     return newTab;
 }
 
 const tabContent = document.querySelector('.topics');
 
-tabContent.appendChild(Tab(data.topics))
+//tabContent.appendChild(Tab(data.topics))
