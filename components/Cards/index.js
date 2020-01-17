@@ -20,11 +20,14 @@
 
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(data => {
-        console.log('articles: ', data);
+    .then(response => {
+        console.log('articles: ', response);
+        const artObj = response;
 
 
     })
+
+
 
 function createCard(obj) {
     const card = document.createElement('div');
