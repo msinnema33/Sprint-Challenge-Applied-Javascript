@@ -38,7 +38,7 @@ function Tab(data) {
 
     newTab.classList.add('tab');
 
-    newTab.textContent = data.data;
+    newTab.textContent = data.topics;
 
 
 
@@ -47,4 +47,4 @@ function Tab(data) {
 
 const tabContent = document.querySelector('.topics');
 
-tabContent.appendChild(Tab(data))
+tabContent.appendChild(Tab(data.topics))
